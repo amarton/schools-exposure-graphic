@@ -33,7 +33,9 @@
 
 	<!-- RACE CONTAINER -->
 	<div id="race-container">
-		<h2>Select a school district to see the racial makeup of that district. Select a race to see that race's exposure to other races in the district. <span class="green-text">In highly-integrated schools, exposure rate will closely match the district's racial makeup.</span></h2>
+		<h2>Minority students in Maryland are more likely to attend school with minority students. White students are more likely to attend schools with white students. If schools were integrated, as research has shown benefits all students, the demographics of the schools would match the demographics of people living in the school district. <br><br>
+
+		<span class="green-text"><strong>Select a school district to see how segregated your district is.</strong></span></h2>
 
 		SELECT DISTRICT<br>
 		<div class="select">
@@ -50,8 +52,13 @@
 		  </div>
 
 
+		<div style="clear:both;"></div><br>
+		
+		<h3 id="student-text">If you are <strong><span id="text-race">a black student</span></strong> in <strong><span id="text-district">Maryland</span></strong> this is <span id="text-exposure">exposure rate</span></strong>.</h3>
 
-		<h3>This is the <span id="text-exposure">exposure rate</span> of <strong><span id="text-race">a black student</span></strong> in <strong><span id="text-district">Maryland.</span></strong></h3>
+		<h3 id="district-text">This is the racial makeup of an average school in <strong><span id="text-district2">Maryland</span></strong>.</h3>
+		
+		<div style="clear:both;"></div><br>
 
 		SELECT RACE<br>
 		<div id="md-menu" class="select">
@@ -240,7 +247,9 @@
 
 <!-- POVERTY CONTAINER -->
 	<div id="poverty-container">
-		<h2>Select a school district to see the poverty makeup of that district. Select reduced or non-reduced meal plan to see that group's exposure to other economic groups in the district. <span class="green-text">In highly-integrated schools, exposure rate will closely match the district's makeup.</span></h2>
+		<h2>Poor students in Maryland are more likely to attend school with other poor students, just as middle-income and affluent students are more likely to be in schools with others of that socioeconomic background. If schools were integrated by income, as research shows helps all students, the demographics of the schools would match the demographics of the people living in that school district. <br><br>
+
+		<span class="green-text"><strong>Select a school district to see how segregated your district is.</strong></span></h2>
 		
 		SELECT DISTRICT<br>
 		<div class="select">
@@ -257,17 +266,21 @@
 		  </div>
 
 
+		<div style="clear:both;"></div><br>
 
+		<h3 id="student-text-poverty">If you're a <strong><span id="text-poverty-rate"> </span></strong> in <strong><span id="text-poverty-district"></span></strong>, this is socioeconomic makeup of the average school.
 
-		<h3>This is the <span id="text-poverty-exposure"> </span> of <strong><span id="text-poverty-rate"> </span></strong> in <strong><span id="text-poverty-district"></span>.</strong></h3>
+		<h3 id="district-text-poverty">This is the socioeconomic makeup of the average school in <strong><span id="text-poverty-district2"></span></strong>.</h3>
 
-		SELECT MEAL PLAN<br>
+		<div style="clear:both;"></div><br>
+
+		SELECT SOCIOECONOMIC BACKGROUND<br>
 		<div id="md-poverty-menu" class="select">
 		    <span class="arr"></span>
 		   <select class="small" onchange="load_poverty_exposure_data_eval(this.value)">
 		      <option value="mdAllPovertyData">All</option>
-		      <option value="mdReducedPovertyData">Reduced</a></option>
-		      <option value="mdNonReducedPovertyData">Non-Reduced</option>
+		      <option value="mdReducedPovertyData">Qualify for free/reduced lunch</a></option>
+		      <option value="mdNonReducedPovertyData">Not qualified for free/reduced lunch</option>
 		    </select>
 		  </div>
 

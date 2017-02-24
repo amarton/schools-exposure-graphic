@@ -256,41 +256,56 @@ function load_exposure_data(race) {
 	var raceText
 
 	if (race["race-dropdown"] == "All") {
-		raceText = "an average school";
 		chairColor = "grey";
+		$("#student-text").addClass('displaynone');
+		$("#student-text").removeClass('displayall');
+		$("#district-text").addClass('displayall');
 	};
 
 
 	if (race["race-dropdown"] == "White") {
 		raceText = "a white student";
 		chairColor = "yellow";
+		$("#student-text").addClass('displayall');
+		$("#district-text").addClass('displaynone');
+		$("#district-text").removeClass('displayall');
 	};
 
 	if (race["race-dropdown"] == "Hispanic") {
 		raceText = "a hispanic student";
 		chairColor = "blue";
+		$("#student-text").addClass('displayall');
+		$("#district-text").addClass('displaynone');
+		$("#district-text").removeClass('displayall');
 	};
 
 	if (race["race-dropdown"] == "Black") {
 		raceText = "a black student";
 		chairColor = "red";
+		$("#student-text").addClass('displayall');
+		$("#district-text").addClass('displaynone');
+		$("#district-text").removeClass('displayall');
 	};
 
 	if (race["race-dropdown"] == "Asian") {
 		raceText = "an asian student";
 		chairColor = "green";
+		$("#student-text").addClass('displayall');
+		$("#district-text").addClass('displaynone');
+		$("#district-text").removeClass('displayall');
 	};
 
 	if (race["race-dropdown"] == "All") {
-		exposureText = "racial makeup";
+		exposureText = "the racial makeup of the average school";
 	} else {
-		exposureText = "exposure rate";
+		exposureText = "the racial makeup of the average school";
 	}
 
 
 
 	$("#text-exposure").html(exposureText);
 	$("#text-district").html(race["district"]);
+	$("#text-district2").html(race["district"]);
 	$("#text-race").html(raceText);
 	$("#chair-svg").removeClass();
 	$("#chair-svg").addClass(chairColor);
@@ -337,18 +352,26 @@ load_poverty_exposure_data(frmp)
 function load_poverty_exposure_data(frmp) {
 
 	if (frmp["poverty-dropdown"] == "All") {
-		frmpText = "an average school";
 		frmpChairColor = "grey";
+		$("#student-text-poverty").addClass('displaynone');
+		$("#student-text-poverty").removeClass('displayall');
+		$("#district-text-poverty").addClass('displayall');
 	};
 
 	if (frmp["poverty-dropdown"] == "Reduced") {
 		frmpText = "a reduced student";
 		frmpChairColor = "red";
+		$("#student-text-poverty").addClass('displayall');
+		$("#district-text-poverty").addClass('displaynone');
+		$("#district-text-poverty").removeClass('displayall');
 	};
 
 	if (frmp["poverty-dropdown"] == "Non-Reduced") {
 		frmpText = "a non-reduced student";
 		frmpChairColor = "blue";
+		$("#student-text-poverty").addClass('displayall');
+		$("#district-text-poverty").addClass('displaynone');
+		$("#district-text-poverty").removeClass('displayall');
 	};
 
 	if (frmp["poverty-dropdown"] == "All") {
@@ -360,6 +383,7 @@ function load_poverty_exposure_data(frmp) {
 
 	$("#text-poverty-exposure").html(frmpExposureText);
 	$("#text-poverty-district").html(frmp["district"]);
+	$("#text-poverty-district2").html(frmp["district"]);
 	$("#text-poverty-rate").html(frmpText);
 	$("#chair-svg-poverty").removeClass();
 	$("#chair-svg-poverty").addClass( frmpChairColor );
