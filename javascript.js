@@ -303,19 +303,19 @@ function load_exposure_data(race) {
 
 	//This formula calculates change in area
 	var exposureWhite
-	exposureWhite = Math.sqrt(race["exposure-white"] * 100);
+	exposureWhite = Math.sqrt(((7854 * (race["exposure-white"]/100)) / 3.1416)) * 2;
 
 	var exposureBlack
-	exposureBlack = Math.sqrt(race["exposure-black"] * 100);
+	exposureBlack = Math.sqrt(((7854 * (race["exposure-black"]/100)) / 3.1416)) * 2;
 
 	var exposureHispanic
-	exposureHispanic = Math.sqrt(race["exposure-hispanic"] * 100);
+	exposureHispanic = Math.sqrt(((7854 * (race["exposure-hispanic"]/100)) / 3.1416)) * 2;
 
 	var exposureAsian
-	exposureAsian = Math.sqrt(race["exposure-asian"] * 100);
+	exposureAsian = Math.sqrt(((7854 * (race["exposure-asian"]/100)) / 3.1416)) * 2;
 
 	var exposureOther
-	exposureOther = Math.sqrt(race["exposure-other"] * 100);
+	exposureOther = Math.sqrt(((7854 * (race["exposure-other"]/100)) / 3.1416)) * 2;
 
 
 	$("#text-exposure").html(exposureText);
@@ -392,10 +392,10 @@ function load_poverty_exposure_data(frmp) {
 
 	//This formula calculates change in area
 	var exposurePovertyReduced
-	exposurePovertyReduced = Math.sqrt(frmp["exposure-reduced"] * 100);
+	exposurePovertyReduced = Math.sqrt(((7854 * (frmp["exposure-reduced"]/100)) / 3.1416)) * 2;
 
 	var exposurePovertyNonReduced
-	exposurePovertyNonReduced = Math.sqrt(frmp["exposure-non-reduced"] * 100);
+	exposurePovertyNonReduced = Math.sqrt(((7854 * (frmp["exposure-non-reduced"]/100)) / 3.1416)) * 2;
 
 
 	$("#text-poverty-district").html(frmp["district"]);
