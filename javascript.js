@@ -389,11 +389,6 @@ function load_poverty_exposure_data(frmp) {
 		$("#district-text-poverty").removeClass('displayall');
 	};
 
-	if (frmp["poverty-dropdown"] == "All") {
-		frmpExposureText = "poverty makeup";
-	} else {
-		frmpExposureText = "poverty exposure";
-	};	
 
 	//This formula calculates change in area
 	var exposurePovertyReduced
@@ -403,10 +398,8 @@ function load_poverty_exposure_data(frmp) {
 	exposurePovertyNonReduced = Math.sqrt(frmp["exposure-non-reduced"] * 100);
 
 
-	$("#text-poverty-exposure").html(frmpExposureText);
 	$("#text-poverty-district").html(frmp["district"]);
 	$("#text-poverty-district2").html(frmp["district"]);
-	$("#text-poverty-rate").html(frmpText);
 	$("#chair-svg-poverty").removeClass();
 	$("#chair-svg-poverty").addClass( frmpChairColor );
 	$("#chair-svg-poverty-bottom").removeClass();
