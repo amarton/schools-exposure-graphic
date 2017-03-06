@@ -301,6 +301,21 @@ function load_exposure_data(race) {
 		exposureText = "the racial makeup of the average school";
 	}
 
+	//This formula calculates change in area
+	var exposureWhite
+	exposureWhite = Math.sqrt(race["exposure-white"] * 100);
+
+	var exposureBlack
+	exposureBlack = Math.sqrt(race["exposure-black"] * 100);
+
+	var exposureHispanic
+	exposureHispanic = Math.sqrt(race["exposure-hispanic"] * 100);
+
+	var exposureAsian
+	exposureAsian = Math.sqrt(race["exposure-asian"] * 100);
+
+	var exposureOther
+	exposureOther = Math.sqrt(race["exposure-other"] * 100);
 
 
 	$("#text-exposure").html(exposureText);
@@ -314,28 +329,28 @@ function load_exposure_data(race) {
 
 	$("#asian-text").html(race["exposure-asian"] + "%");
 	$("#asian-dif").html(race["asian-dif"] );
-	$("#asian-circle").css( "width", race["exposure-asian"] );
-	$("#asian-circle").css( "height", race["exposure-asian"] );
+	$("#asian-circle").css( "width", exposureAsian );
+	$("#asian-circle").css( "height", exposureAsian );
 
 	$("#white-text").html(race["exposure-white"] + "%");
 	$("#white-dif").html(race["white-dif"]);
-	$("#white-circle").css( "width", race["exposure-white"] );
-	$("#white-circle").css( "height", race["exposure-white"] );
+	$("#white-circle").css( "width", exposureWhite );
+	$("#white-circle").css( "height", exposureWhite );
 
 	$("#black-text").html(race["exposure-black"] + "%");
 	$("#black-dif").html(race["black-dif"] );
-	$("#black-circle").css( "width", race["exposure-black"] );
-	$("#black-circle").css( "height", race["exposure-black"] );
+	$("#black-circle").css( "width", exposureBlack );
+	$("#black-circle").css( "height", exposureBlack );
 
 	$("#hispanic-text").html(race["exposure-hispanic"] + "%");
 	$("#hispanic-dif").html(race["hispanic-dif"]);
-	$("#hispanic-circle").css( "width", race["exposure-hispanic"] );
-	$("#hispanic-circle").css( "height", race["exposure-hispanic"] );
+	$("#hispanic-circle").css( "width", exposureHispanic );
+	$("#hispanic-circle").css( "height", exposureHispanic );
 
 	$("#other-text").html(race["exposure-other"] + "%");
 	$("#other-dif").html(race["other-dif"] );
-	$("#other-circle").css( "width", race["exposure-other"] );
-	$("#other-circle").css( "height", race["exposure-other"] );
+	$("#other-circle").css( "width", exposureOther );
+	$("#other-circle").css( "height", exposureOther );
 
 };
 
@@ -380,6 +395,13 @@ function load_poverty_exposure_data(frmp) {
 		frmpExposureText = "poverty exposure";
 	};	
 
+	//This formula calculates change in area
+	var exposurePovertyReduced
+	exposurePovertyReduced = Math.sqrt(frmp["exposure-reduced"] * 100);
+
+	var exposurePovertyNonReduced
+	exposurePovertyNonReduced = Math.sqrt(frmp["exposure-non-reduced"] * 100);
+
 
 	$("#text-poverty-exposure").html(frmpExposureText);
 	$("#text-poverty-district").html(frmp["district"]);
@@ -392,13 +414,13 @@ function load_poverty_exposure_data(frmp) {
 
 	$("#reduced-text").html(frmp["exposure-reduced"] + "%");
 	$("#reduced-dif").html(frmp["reduced-dif"] );
-	$("#reduced-circle").css( "width", frmp["exposure-reduced"] );
-	$("#reduced-circle").css( "height", frmp["exposure-reduced"] );
+	$("#reduced-circle").css( "width", exposurePovertyReduced );
+	$("#reduced-circle").css( "height", exposurePovertyReduced );
 
 	$("#non-reduced-text").html(frmp["exposure-non-reduced"] + "%");
 	$("#non-reduced-dif").html(frmp["non-reduced-dif"] );
-	$("#non-reduced-circle").css( "width", frmp["exposure-non-reduced"] );
-	$("#non-reduced-circle").css( "height", frmp["exposure-non-reduced"] );
+	$("#non-reduced-circle").css( "width", exposurePovertyNonReduced );
+	$("#non-reduced-circle").css( "height", exposurePovertyNonReduced );
 
 };
 
